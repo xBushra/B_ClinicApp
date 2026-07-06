@@ -4,6 +4,7 @@ using EFCore.ClinicModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    partial class ClinicContextModelSnapshot : ModelSnapshot
+    [Migration("20260706153739_AppointemntsTable")]
+    partial class AppointemntsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +34,7 @@ namespace EFCore.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AllocationDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GetDate()");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
@@ -45,7 +46,7 @@ namespace EFCore.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointment");
                 });
 
             modelBuilder.Entity("EFCore.ClinicModels.Doctor", b =>
@@ -72,38 +73,6 @@ namespace EFCore.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("EFCore.ClinicModels.DoctorSpeciality", b =>
-                {
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SpecialityId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DoctorId", "SpecialityId");
-
-                    b.HasIndex("SpecialityId");
-
-                    b.ToTable("DoctorSpecialities");
-                });
-
-            modelBuilder.Entity("EFCore.ClinicModels.Speciality", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Specialities");
-                });
-
             modelBuilder.Entity("EFCore.ClinicModels.Appointment", b =>
                 {
                     b.HasOne("EFCore.ClinicModels.Doctor", "Doctor")
@@ -113,21 +82,6 @@ namespace EFCore.Migrations
                         .IsRequired();
 
                     b.Navigation("Doctor");
-                });
-
-            modelBuilder.Entity("EFCore.ClinicModels.DoctorSpeciality", b =>
-                {
-                    b.HasOne("EFCore.ClinicModels.Doctor", null)
-                        .WithMany()
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EFCore.ClinicModels.Speciality", null)
-                        .WithMany()
-                        .HasForeignKey("SpecialityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EFCore.ClinicModels.Doctor", b =>

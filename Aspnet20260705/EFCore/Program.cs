@@ -24,3 +24,12 @@ var d1 = new Doctor {
 db.Doctors.Add(d1);
 db.SaveChanges();
 
+var a1 = new Appointment {
+    DoctorId = 1,
+    PatientId = 3,
+};
+
+db.Appointments.Add(a1);
+db.SaveChanges();
+
+
