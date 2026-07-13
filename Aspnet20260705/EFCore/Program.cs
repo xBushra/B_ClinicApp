@@ -1,8 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-using EFCore.ClinicModels;
-using EFCore.HrModels;
+﻿//// See https://aka.ms/new-console-template for more information
+//using EFCore.ClinicModels;
+//using EFCore.HrModels;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 //var db = new HrContext();
 
@@ -14,22 +14,22 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine(empKing.Salary);
 
 
-var db = new ClinicContext();
+//var db = new ClinicContext();
 
-var d1 = new Doctor {
-    Name = "Wael",
-    HireDate = DateTime.Now,
-};
+//var d1 = new Doctor {
+//    Name = "Wael",
+//    HireDate = DateTime.Now,
+//};
 
-db.Doctors.Add(d1);
-db.SaveChanges();
+//db.Doctors.Add(d1);
+//db.SaveChanges();
 
-var a1 = new Appointment {
-    DoctorId = 1,
-    PatientId = 3,
-};
+//var a1 = new Appointment {
+//    DoctorId = 1,
+//    PatientId = 3,
+//};
 
-db.Appointments.Add(a1);
-db.SaveChanges();
+//db.Appointments.Add(a1);
+//db.SaveChanges();
 
 
