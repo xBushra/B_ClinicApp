@@ -20,6 +20,7 @@ namespace ClinicApp.ViewModels
 
         [Range(0, 100_000)]
         public double Salary { get; set; }
+        public List<SpecialityReadVM> Specialities { get; set; } = new();
 
         public int YearsOfService => (int)((DateTime.Now - HireDate).TotalDays / 365);
 

@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace ClinicApp.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class PatientController : Controller
     {
 
@@ -69,8 +69,8 @@ namespace ClinicApp.Controllers
             if (!ModelState.IsValid)
             {
                 vm.AllSpecialities = _db.Specialities
-               .Select(s => s.ToSpecialityReadVM())
-               .ToList();
+                    .Select(s => s.ToSpecialityReadVM())
+                    .ToList();
                 return View(vm);
             }
 
@@ -100,7 +100,7 @@ namespace ClinicApp.Controllers
             var patient = _db.Patients
                 .Include(d => d.Specialities)
                 .Single(d => d.Id == id).ToPatientUpdateVM();
-                .patient.AllSpecialities = _db.Specialities
+            patient.AllSpecialities = _db.Specialities
                 .Select(s => s.ToSpecialityReadVM())
                 .ToList();
 

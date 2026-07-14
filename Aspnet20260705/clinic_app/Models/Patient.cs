@@ -1,5 +1,4 @@
-﻿
-using ClinicApp.ViewModels;
+﻿using ClinicApp.ViewModels;
 using System;
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
@@ -36,7 +35,7 @@ namespace ClinicApp.Models
                 Name = Name,
                 HireDate = HireDate,
                 Salary = Salary,
-                //Specialities = Specialities.Select(s => s.ToSpecialityReadVM()).ToList(),
+                Specialities = Specialities.Select(s => s.ToSpecialityReadVM()).ToList(),
             };
         }
 
@@ -47,7 +46,7 @@ namespace ClinicApp.Models
                 Name = Name,
                 HireDate = HireDate,
                 Salary = Salary,
-                //SelectedSpecialityIds = Specialities.Select(s => s.Id).ToList(),
+                SelectedSpecialityIds = Specialities.Select(s => s.Id).ToList(),
             };
         }
     }

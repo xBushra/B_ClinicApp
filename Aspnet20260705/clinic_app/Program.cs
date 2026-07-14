@@ -1,6 +1,5 @@
 using ClinicApp.Helpers;
 using ClinicApp.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -8,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ClinicContext>(options => options.UseSqlServer(connStr));
+
+builder.Services.AddScoped<SomeService>();
+builder.Services.AddTransient<OtherService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,9 +25,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
+//app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+//await AdminSeeder.SeedAdmin(app);
+
 app.Run();

@@ -15,7 +15,5 @@ namespace ClinicApp.Models
     {
         public int PatientId { get; set; }
         public int SpecialityId { get; set; }
-
-
     }
 }
