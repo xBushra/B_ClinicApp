@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace ClinicApp.Models {
     public class ClinicContext : DbContext {
 
-        public DbSet<Patient> Patient { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
 

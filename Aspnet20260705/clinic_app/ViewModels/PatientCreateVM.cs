@@ -1,4 +1,4 @@
-﻿//using ClinicApp.Helpers;
+﻿using ClinicApp.Helpers;
 using ClinicApp.Models;
 using System;
 using System.Collections.Generic;
@@ -9,22 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicApp.ViewModels
-    {
-        public class PatientCreateVM
-    {
+{
+        public class PatientCreateVM{
 
             [MaxLength(100)]
             public string Name { get; set; }
 
-            //[NotFutureDate(ErrorMessage = "Hiredate can't be a furture date")]
+            [NotFutureDate(ErrorMessage = "Hiredate can't be a furture date")]
             [Display(Name = "Hire Date")]
             public DateTime HireDate { get; set; } = DateTime.Now;
 
             [Range(0, 100_000)]
             public double Salary { get; set; }
+            public List<int> SelectedSpecialityIds { get; set; } = new();
+
+            public List<SpecialityReadVM> AllSpecialities { get; set; } = new();
 
 
-            public Patient ToPatient()
+
+
+        public Patient ToPatient()
             {
                 return new Patient
                 {
@@ -34,4 +38,4 @@ namespace ClinicApp.ViewModels
                 };
             }
         }
-    }
+}

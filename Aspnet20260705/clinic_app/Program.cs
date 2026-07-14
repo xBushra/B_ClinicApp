@@ -1,4 +1,4 @@
-//using ClinicApp.Helpers;
+using ClinicApp.Helpers;
 using ClinicApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

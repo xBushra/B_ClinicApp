@@ -1,53 +1,23 @@
-﻿@model ClinicApp.ViewModels.PatientReadVM
+﻿@model PatientReadVM
 
 @{
-    ViewData["Title"] = $"Patient #{Model.Id}";
+    ViewData["Title"] = $"Patient #{Model.Id} Details";
 }
-
-<div class="container mt-5">
-
-    <div class="row justify-content-center">
-
-        <div class="col-md-6">
-
-            <div class="card shadow">
-
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Patient Details</h3>
-                </div>
-
-                <div class="card-body">
-
-                    <div class="mb-3">
-                        <h6 class="text-muted">Patient ID</h6>
-                        <p class="fs-5">@Model.Id</p>
-                    </div>
-
-                    <div class="mb-3">
-                        <h6 class="text-muted">Patient Name</h6>
-                            <p class="fs-5">@Model.Name</p>
-                    </div>
-
-                </div>
-
-                <div class="card-footer text-end">
-
-                    <a asp-action="Index" class="btn btn-secondary">
-                        Back
-                    </a>
-@* 
-                    <a asp-action="Edit"
-                       asp-route-id="@Model.Id"
-                       class="btn btn-warning">
-                        Edit
-                    </a> *@
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+<h3>
+    @Model.Name
+</h3>
+<h6>
+    @Model.HireDate.ToShortDateString()
+</h6>
+<h6>
+    SAR @Model.Salary
+</h6>
+<h6>
+    Specialities:
+    <ul>
+        @foreach (var speciality in Model.Specialities)
+        {
+            <li>@speciality.Name</li>
+        }
+    </ul>
+</h6>
