@@ -1,0 +1,25 @@
+﻿using ClinicApp.Helpers;
+using System.ComponentModel.DataAnnotations;
+
+namespace ClinicApp.ViewModels
+{
+    public class UserCreateVM
+    {
+
+        [EmailAddress]
+        public string Email { get; set; } = null!;
+
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = null!;
+
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password))]
+        public string ConfirmPassword { get; set; } = null!;
+
+        [EnumDataType(typeof(AppRoles))]
+        public string Role { get; set; } = null!;
+
+        public IFormFile? ProfilePicture { get; set; }
+
+    }
+}

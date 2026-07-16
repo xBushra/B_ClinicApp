@@ -23,6 +23,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -47,12 +55,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Patient/_Filter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxfRmlsdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Patient/_Pagination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxfUGFnaW5hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/User/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/_ViewImports.cshtml]
@@ -62,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Shared/_AuthLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-4isnyekutb
 
 [C:/Users/ibush/source/repos/tuwaiq-aspnet-20260705/Aspnet20260705/clinic_app/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

@@ -25,9 +25,6 @@ namespace ClinicApp.ViewModels
 
             public List<SpecialityReadVM> AllSpecialities { get; set; } = new();
 
-
-
-
         public Patient ToPatient()
             {
                 return new Patient

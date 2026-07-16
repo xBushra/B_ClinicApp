@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace ClinicApp.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class PatientController : Controller
     {
 

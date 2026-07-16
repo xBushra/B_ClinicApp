@@ -7,9 +7,11 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ClinicApp.Helpers;
 
 namespace ClinicApp.Models {
-    public class ClinicContext : DbContext {
+    public class ClinicContext : IdentityDbContext<AppUser>
+    {
 
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
@@ -25,6 +27,15 @@ namespace ClinicApp.Models {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AppUser>().ToTable("Users", "auth");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles", "auth");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "auth");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "auth");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins", "auth");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "auth");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "auth");
+
 
             modelBuilder.Entity<Appointment>()
                 .Property(a => a.AllocationDate)
@@ -61,6 +72,28 @@ namespace ClinicApp.Models {
                     ]);
 
 
+            modelBuilder.Entity<IdentityRole>()
+                .HasData([
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8434-5301c519230f",
+                            Name = AppRoles.APP_ADMIN.ToString(),
+                            NormalizedName = AppRoles.APP_ADMIN.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8434-5301c519230f"
+                        },
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8435-5301c519230f",
+                            Name = AppRoles.PATIENT.ToString(),
+                            NormalizedName = AppRoles.PATIENT.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8435-5301c519230f"
+                        },
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8436-5301c519230f",
+                            Name = AppRoles.OFFICER.ToString(),
+                            NormalizedName = AppRoles.OFFICER.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8436-5301c519230f"
+                        },
+
+                    ]);
 
         }
     }

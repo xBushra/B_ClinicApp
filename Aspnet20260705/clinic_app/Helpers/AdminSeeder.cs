@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using ClinicApp.Models;
 
 namespace ClinicApp.Helpers
 {
@@ -8,14 +9,14 @@ namespace ClinicApp.Helpers
         public static async Task SeedAdmin(WebApplication app)
         {
             var scope = app.Services.CreateScope();
-            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
 
 
             var admin = await userManager.FindByEmailAsync("admin@clinic.com");
 
             if (admin != null) return;
 
-            admin = new IdentityUser
+            admin = new AppUser
             {
                 Email = "admin@clinic.com",
                 UserName = "admin"
@@ -26,6 +27,12 @@ namespace ClinicApp.Helpers
             if (!result.Succeeded)
             {
                 throw new Exception("Can't create admin user");
+            }
+            result = await userManager.AddToRoleAsync(admin, AppRoles.APP_ADMIN.ToString());
+
+            if (!result.Succeeded)
+            {
+                throw new Exception("Can't assign admin role");
             }
         }
     }
